@@ -25,6 +25,7 @@ if(isset ($_POST['deleteTaskItem'])){
   file_put_contents('todoList.json', json_encode($list));
 }
 
+
 //rendere il file php come un file json
 header('Content-Type: application/json');
 echo json_encode($list);

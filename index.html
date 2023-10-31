@@ -34,11 +34,15 @@
       <!-- lista task da svolgere -->
       <div class="my-5 tasksList">
         <ul class="list-group list-unstyled  listGroup">
-          <li 
+          <li
+            @click="this.taskDone(index)"
             v-for="(item, index) in list"
             class="list-group-item d-flex justify-content-between "
             > 
-              <span>{{item}}</span>
+              <span>
+
+                {{item}}
+              </span>
               <i class="fa-solid fa-x text-danger" @click="removeTask(index)"></i>
           </li>
         </ul>
