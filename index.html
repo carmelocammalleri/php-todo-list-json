@@ -26,22 +26,29 @@
 </head>
 <body>
 
-  <div id="app" class="container">
-    <h1> {{title}}</h1>
-    <div class="my-5 tasksList">
-      <ul class="list-group list-unstyled  listGroup">
-        <li 
-        v-for="(item, index) in list"
-        class="list-group-item"
-        > {{item}}</li>
-      </ul>
-    </div>
-    <div class="my2">
-      <h4>add task</h4>
-      <input 
-        @keyup.enter="addTask"
-        v-model.trim="newTask"
-        type="text">
+  <div id="app">
+    <div class="container">
+
+      <h1> {{title}}</h1>
+
+      <!-- lista task da svolgere -->
+      <div class="my-5 tasksList">
+        <ul class="list-group list-unstyled  listGroup">
+          <li 
+          v-for="(item, index) in list"
+          class="list-group-item d-flex justify-content-between "
+          > <span>{{item}}</span><i class="fa-solid fa-x text-danger "></i></li>
+        </ul>
+      </div>
+
+      <!-- barra input -->
+      <div class="my2">
+        <h4>add task</h4>
+        <input 
+          @keyup.enter="addTask"
+          v-model.trim="newTask"
+          type="text">
+      </div>
     </div>
 
   </div>
