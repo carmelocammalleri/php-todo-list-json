@@ -29,12 +29,11 @@ createApp({
       axios.post(this.apiUrl, data)
         .then(result =>{
           this.list= result.data;
+          this.newTask= '';
         })
-      this.newTask= ''
     }
   },
   mounted(){
     this.getApiList();
-    this.addTask();
   }
 }).mount('#app')
