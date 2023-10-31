@@ -17,7 +17,11 @@ if(isset ($_POST['taskItem'])){
 //cancellare task dal json e stampare la nuova lista
 if(isset ($_POST['deleteTaskItem'])){
   $deleteTaskItem= $_POST['deleteTaskItem'];
-  array_splice($list, $deleteTaskItem, 1);
+
+  //controllo se è stata svolto o meno la task
+  if($list[$deleteTaskItem]["done"]){
+    array_splice($list, $deleteTaskItem, 1);
+  }
 }
 
 // toggle task fatte
