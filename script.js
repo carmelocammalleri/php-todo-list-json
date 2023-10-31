@@ -31,6 +31,9 @@ createApp({
           this.list= result.data;
           this.newTask= '';
         })
+    },
+    removeTask(){
+      console.log('ciao ciao task');
     }
   },
   mounted(){

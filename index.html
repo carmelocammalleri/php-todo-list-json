@@ -35,9 +35,12 @@
       <div class="my-5 tasksList">
         <ul class="list-group list-unstyled  listGroup">
           <li 
-          v-for="(item, index) in list"
-          class="list-group-item d-flex justify-content-between "
-          > <span>{{item}}</span><i class="fa-solid fa-x text-danger "></i></li>
+            v-for="(item, index) in list"
+            class="list-group-item d-flex justify-content-between "
+            > 
+              <span>{{item}}</span>
+              <i class="fa-solid fa-x text-danger" @click="removeTask"></i>
+          </li>
         </ul>
       </div>
 
