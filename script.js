@@ -33,7 +33,7 @@ createApp({
         })
     },
     removeTask(index){
-      // console.log('ciao ciao task');
+      //console.log('ciao ciao task');
       const data= new FormData();
       data.append ('deleteTaskItem', index)
       axios.post(this.apiUrl, data)
