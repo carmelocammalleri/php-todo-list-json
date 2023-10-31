@@ -32,8 +32,14 @@ createApp({
           this.newTask= '';
         })
     },
-    removeTask(){
-      console.log('ciao ciao task');
+    removeTask(index){
+      // console.log('ciao ciao task');
+      const data= new FormData();
+      data.append ('deleteTaskItem', index)
+      axios.post(this.apiUrl, data)
+      .then(result =>{
+        this.list= result.data;
+      })
     }
   },
   mounted(){

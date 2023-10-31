@@ -16,6 +16,15 @@ if(isset ($_POST['taskItem'])){
   file_put_contents('todoList.json', json_encode($list));
 }
 
+//cancellare task dal json e stampare la nuova lista
+if(isset ($_POST['deleteTaskItem'])){
+  $deleteTaskItem= $_POST['deleteTaskItem'];
+  array_splice($list, $deleteTaskItem, 1);
+
+  // stampare lista nel file json
+  file_put_contents('todoList.json', json_encode($list));
+}
+
 //rendere il file php come un file json
 header('Content-Type: application/json');
 echo json_encode($list);
