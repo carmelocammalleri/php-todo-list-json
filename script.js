@@ -12,6 +12,13 @@ createApp({
     getApiList(){
       //prova chiamata funzione
       console.log('ciao bello');
+
+      //chiamata axios
+      axios.get('server.php')
+      .then(result => {
+        // console.log(result.data);
+        this.list= result.data;
+      })
     }
   },
   mounted(){
