@@ -4,7 +4,8 @@ createApp({
   data(){
     return{
       apiUrl: 'server.php',
-      list:[]
+      list:[],
+      title: '- toDo list - '
     }
   }
-})
+}).mount('#app')
