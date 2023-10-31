@@ -6,7 +6,7 @@ $str_json = file_get_contents('todoList.json');
 // var_dump($str_json);
 
 // trasformo in array
-$list = json_decode($str_json);
+$list = json_decode($str_json, true);
 // var_dump($list);
 
 if(isset ($_POST['taskItem'])){
@@ -25,7 +25,14 @@ if(isset ($_POST['deleteTaskItem'])){
   file_put_contents('todoList.json', json_encode($list));
 }
 
+// toggle done
+if(isset($_POST['toggleDone'])){
+  $toggleDone= $_POST['toggleDone'];
+  $list[$toggleDone]["done"] =!$list[$toggleDone]["done"];
+
+  file_put_contents('todoList.json', json_encode($list));
+}
 
 //rendere il file php come un file json
-header('Content-Type: application/json');
-echo json_encode($list);
+ header('Content-Type: application/json');
+ echo json_encode($list);
