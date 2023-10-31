@@ -12,7 +12,7 @@ createApp({
   methods:{
     getApiList(){
       //prova chiamata funzione
-      console.log('ciao bello');
+      console.log('ciao getApi');
 
       //chiamata axios
       axios.get(this.apiUrl)
