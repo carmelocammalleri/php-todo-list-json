@@ -39,7 +39,7 @@
       <h4>add task</h4>
       <input 
         @keyup.enter="addTask"
-        v-model="newTask"
+        v-model.trim="newTask"
         type="text">
     </div>
 

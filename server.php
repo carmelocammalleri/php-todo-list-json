@@ -9,6 +9,13 @@ $str_json = file_get_contents('todoList.json');
 $list = json_decode($str_json);
 // var_dump($list);
 
+if(isset ($_POST['taskItem'])){
+  $newItem = $_POST['taskItem'];
+  $list[]= $newItem;
+
+  file_put_contents('todoList.json', json_encode($list));
+}
+
 //rendere il file php come un file json
 header('Content-Type: application/json');
 echo json_encode($list);
