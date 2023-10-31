@@ -11,7 +11,7 @@ $list = json_decode($str_json);
 
 if(isset ($_POST['taskItem'])){
   $newItem = $_POST['taskItem'];
-  $list[]= $newItem;
+  $list[] = array('text' => $newItem, 'done' => false);
 
   file_put_contents('todoList.json', json_encode($list));
 }
