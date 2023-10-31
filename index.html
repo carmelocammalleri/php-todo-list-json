@@ -35,6 +35,14 @@
         > {{item}}</li>
       </ul>
     </div>
+    <div class="my2">
+      <h4>add task</h4>
+      <input 
+        @keyup.enter="addTask"
+        v-model="newTask"
+        type="text">
+    </div>
+
   </div>
 
   <script src="./script.js"></script>
