@@ -6,8 +6,7 @@ createApp({
       apiUrl: 'server.php',
       list:[],
       title: '- toDo list - ',
-      newTask: '',
-      isActive: false
+      newTask: ''
     }
   },
   methods:{
@@ -42,8 +41,10 @@ createApp({
         this.list= result.data;
       })
     },
-    taskDone(){
-      console.log('done');
+    taskDone(index){
+      this.list[index].done = !this.list[index].done;
+      console.log(this.list[index].done);
+     
     }
       
   },

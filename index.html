@@ -33,14 +33,13 @@
 
       <!-- lista task da svolgere -->
       <div class="my-5 tasksList">
-        <ul class="list-group list-unstyled  listGroup">
+        <ul class="list-group list-unstyled listGroup">
           <li
-            @click="this.taskDone(index)"
             v-for="(item, index) in list"
+            @click="taskDone(index)"
             class="list-group-item d-flex justify-content-between "
             > 
-              <span>
-
+              <span :class="{lineThr: item.done}">
                 {{item.text}}
               </span>
               <i class="fa-solid fa-x text-danger" @click="removeTask(index)"></i>
