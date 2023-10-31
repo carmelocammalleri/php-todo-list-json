@@ -43,8 +43,13 @@ createApp({
     },
     taskDone(index){
       this.list[index].done = !this.list[index].done;
-      console.log(this.list[index].done);
-     
+      // console.log(this.list[index].done);
+      const data= new FormData();
+      data.append ('toggleDone', index)
+      axios.post(this.apiUrl, data)
+      .then(result =>{
+        this.list= result.data;
+      })
     }
       
   },
