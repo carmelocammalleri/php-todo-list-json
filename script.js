@@ -15,14 +15,21 @@ createApp({
       console.log('ciao bello');
 
       //chiamata axios
-      axios.get('server.php')
+      axios.get(this.apiUrl)
       .then(result => {
         // console.log(result.data);
         this.list= result.data;
       })
     },
     addTask(){
-      console.log(this.newTask);
+      // console.log(this.newTask);
+      const data= new FormData();
+      data.append ('taskItem', this.newTask)
+
+      axios.post(this.apiUrl, data)
+        .then(result =>{
+          this.list= result.data;
+        })
       this.newTask= ''
     }
   },
