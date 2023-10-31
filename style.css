@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(188, 252, 124);
+}
+
 .container {
   height: 100vh;
 }
@@ -9,4 +13,8 @@
 
 .lineThr {
   text-decoration: line-through; 
+}
+
+.fa-x {
+  cursor: pointer;
 }

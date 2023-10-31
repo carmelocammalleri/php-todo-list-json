@@ -36,7 +36,7 @@
         <ul class="list-group list-unstyled listGroup">
           <li
             v-for="(item, index) in list"
-            class="list-group-item d-flex justify-content-between "
+            class="list-group-item d-flex justify-content-between align-items-center"
             > 
             <span
               class="w-100" 
@@ -59,7 +59,8 @@
         <input 
           @keyup.enter="addTask"
           v-model.trim="newTask"
-          type="text">
+          type="text"
+          placeholder="Scrivi qui...">
       </div>
     </div>
 
